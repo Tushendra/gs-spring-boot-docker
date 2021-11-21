@@ -1,5 +1,5 @@
 pipeline {
-	agent master
+	agent any
 
 	triggers {
 		pollSCM 'H/10 * * * *'
@@ -13,7 +13,7 @@ pipeline {
 	stages {
 		stage("test: baseline (jdk8)") {
 			agent {
-				master {
+				any {
 					image 'adoptopenjdk/openjdk8:latest'
 					args '-v $HOME/.m2:/tmp/jenkins-home/.m2'
 				}
