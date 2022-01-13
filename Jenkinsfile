@@ -26,15 +26,15 @@ pipeline {
 
 	}
 
-	post {
-		changed {
-			script {
-				slackSend(
-						color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
-						channel: '#demochannel',
-						message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
+	// post {
+	//	changed {
+	//		script {
+	//			slackSend(
+	//					color: (currentBuild.currentResult == 'SUCCESS') ? 'good' : 'danger',
+	//					channel: '#demochannel',
+	//					message: "${currentBuild.fullDisplayName} - `${currentBuild.currentResult}`\n${env.BUILD_URL}")
 				
-			}
-		}
-	}
+	//		}
+	//	}
+	//}
 }
